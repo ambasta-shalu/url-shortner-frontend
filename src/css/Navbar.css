@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  left: 0;
+}
+
+.login__button {
+  padding: 0.75rem 1rem;
+  margin: 2rem 1rem;
+  background-color: lightblue;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+  letter-spacing: 2px;
+}
+
+.signup__button {
+  padding: 0.75rem 1rem;
+  margin: 2rem;
+  background-color: blue;
+  color: wheat;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+  letter-spacing: 2px;
+}

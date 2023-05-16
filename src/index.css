@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  pointer-events: none;
+}
+
+img::selection {
+  background-color: transparent;
+  color: transparent;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+body {
+  font-family: "Architects Daughter", cursive;
+  background-color: rgba(135, 206, 250, 0.6);
+}
