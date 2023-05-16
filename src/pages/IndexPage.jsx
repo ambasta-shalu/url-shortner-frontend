@@ -43,6 +43,10 @@ function IndexPage() {
             <button className="signup__button">SHORTEN</button>
           </form>
         </div>
+        <div className="index__output">
+          <p className="index__output__field"></p>
+          <button className="login__button">Copy Link</button>
+        </div>
       </div>
       <button className="logout__button" type="submit" onClick={() => logout()}>
         Logout
