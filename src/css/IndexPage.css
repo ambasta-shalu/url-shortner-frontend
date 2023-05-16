@@ -1,3 +1,36 @@
+.index__contents {
+  z-index: 5;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 2rem;
+}
+
+.index__user {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.user__name {
+  color: rgba(0, 0, 255, 0.6);
+  font-size: 2.25rem;
+}
+
+.index__contents > h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.index__input__field {
+  width: 40rem;
+  padding: 0.75rem;
+  outline-width: 0;
+  border: none;
+  color: black;
+}
+
 .logout__button {
   padding: 0.75rem 1rem;
   background-color: lightcyan;

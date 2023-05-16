@@ -20,6 +20,30 @@ function IndexPage() {
   return (
     <div className="index__page">
       <Navbar />
+      <div className="index__contents">
+        {user ? (
+          <h2 className="index__user">
+            Welcome back{" "}
+            <span className="user__name">
+              {user?.firstName} {user?.lastName}{" "}
+            </span>
+            🙏
+          </h2>
+        ) : (
+          <h2 className="index__user">Hello! 👋</h2>
+        )}
+        <h1>Let's Get Started. Shorten URLs Now </h1>
+        <div className="index__input">
+          <form action="">
+            <input
+              className="index__input__field"
+              type="text"
+              placeholder="Shorten your link"
+            />
+            <button className="signup__button">SHORTEN</button>
+          </form>
+        </div>
+      </div>
       <button className="logout__button" type="submit" onClick={() => logout()}>
         Logout
       </button>
