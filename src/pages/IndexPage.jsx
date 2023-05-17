@@ -3,7 +3,6 @@ import "../css/IndexPage.css";
 import Navbar from "../components/Navbar";
 import Cookies from "universal-cookie";
 import { useUserStore } from "../store/UserStore";
-import { useAuthStore } from "../store/AuthStore";
 
 const cookies = new Cookies();
 const token = cookies.get("TOKEN");
@@ -11,7 +10,6 @@ const token = cookies.get("TOKEN");
 function IndexPage() {
   const fetchUserData = useUserStore((state) => state.userData);
   const user = useUserStore((state) => state.user);
-  const logout = useAuthStore((state) => state.logout);
 
   useEffect(() => {
     fetchUserData();
@@ -45,12 +43,9 @@ function IndexPage() {
         </div>
         <div className="index__output">
           <p className="index__output__field"></p>
-          <button className="login__button copy__button">Copy Link</button>
+          <button className="logout__button copy__button">Copy Link</button>
         </div>
       </div>
-      <button className="logout__button" type="submit" onClick={() => logout()}>
-        Logout
-      </button>
     </div>
   );
 }

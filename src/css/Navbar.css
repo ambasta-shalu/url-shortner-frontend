@@ -11,7 +11,7 @@
   left: 0;
 }
 
-.login__button {
+.logout__button {
   padding: 0.75rem 1rem;
   margin: 2rem 1rem;
   background-color: lightcyan;
@@ -24,7 +24,7 @@
   letter-spacing: 2px;
 }
 
-.login__button:hover {
+.logout__button:hover {
   background-color: rgba(0, 0, 255, 0.2);
   color: black;
 }

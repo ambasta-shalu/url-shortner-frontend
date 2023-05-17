@@ -1,13 +1,15 @@
 import React from "react";
 import "../css/Navbar.css";
 import Logo from "../components/Logo";
+import { useAuthStore } from "../store/AuthStore";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const logout = useAuthStore((state) => state.logout);
   const navigate = useNavigate();
 
-  const handlelogin = function () {
-    navigate("/login");
+  const handlelogout = function () {
+    logout();
   };
 
   const handleSignup = function () {
@@ -20,8 +22,8 @@ function Navbar() {
         <Logo />
       </div>
       <div className="nav__buttons">
-        <button className="login__button" onClick={handlelogin}>
-          Login
+        <button className="logout__button" onClick={handlelogout}>
+          Logout
         </button>
         <button className="signup__button" onClick={handleSignup}>
           Signup
