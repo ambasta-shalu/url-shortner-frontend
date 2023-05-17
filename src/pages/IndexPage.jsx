@@ -5,6 +5,7 @@ import Cookies from "universal-cookie";
 import { Toaster, toast } from "react-hot-toast";
 import { useUserStore } from "../store/UserStore";
 import { useUrlStore } from "../store/UrlStore";
+import copy from "copy-to-clipboard";
 
 const cookies = new Cookies();
 const token = cookies.get("TOKEN");
@@ -20,12 +21,11 @@ function IndexPage() {
   const handleShorten = function (event) {
     event.preventDefault();
     fetchUrl(linkInput);
-    if (outputUrl) {
-      const ele = document.getElementById("copy__button");
-      ele.classList.toggle("hide");
-    } else {
-      console.log("nullllllllllli");
-    }
+  };
+
+  const handlecopy = function () {
+    copy(`${window.location.hostname}:5173/${outputUrl?.shortUrl}`);
+    toast.success("Copied to Clipboard!");
   };
 
   useEffect(() => {
@@ -63,18 +63,16 @@ function IndexPage() {
             </button>
           </form>
         </div>
-        <div className="index__output">
-          {outputUrl ? (
+        {outputUrl && (
+          <div className="index__output">
             <p className="index__output__field">
               {window.location.hostname}:5173/{outputUrl?.shortUrl}
             </p>
-          ) : (
-            <p className="index__output__field"></p>
-          )}
-          <button id="copy__button" className="logout__button hide">
-            Copy Link
-          </button>
-        </div>
+            <button className="logout__button" onClick={handlecopy}>
+              Copy Link
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
