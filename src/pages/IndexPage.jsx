@@ -20,6 +20,12 @@ function IndexPage() {
   const handleShorten = function (event) {
     event.preventDefault();
     fetchUrl(linkInput);
+    if (outputUrl) {
+      const ele = document.getElementById("copy__button");
+      ele.classList.toggle("hide");
+    } else {
+      console.log("nullllllllllli");
+    }
   };
 
   useEffect(() => {
@@ -65,7 +71,9 @@ function IndexPage() {
           ) : (
             <p className="index__output__field"></p>
           )}
-          <button className="logout__button copy__button">Copy Link</button>
+          <button id="copy__button" className="logout__button hide">
+            Copy Link
+          </button>
         </div>
       </div>
     </div>

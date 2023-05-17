@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: var(--FF);
+}
+
 img {
   display: block;
   height: auto;
@@ -29,4 +34,10 @@ textarea {
 body {
   font-family: "Architects Daughter", cursive;
   background-color: rgba(135, 206, 250, 0.6);
+}
+
+/* UTILITY-FUNCTIONS */
+
+.hide {
+  display: none;
 }
