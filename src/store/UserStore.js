@@ -18,11 +18,10 @@ export const useUserStore = create((set) => ({
         },
       });
 
-      console.log(response);
       set({ user: response.data });
     } catch (error) {
       // handle error
-      console.log(`error from user auth store ${error.message}`);
+      console.error(`error from user store ${error.message}`);
     }
   },
 }));

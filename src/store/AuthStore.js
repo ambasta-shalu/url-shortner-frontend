@@ -9,6 +9,8 @@ export const useAuthStore = create((set) => ({
 
   // handle signup
   signup: async (email, firstName, lastName, password) => {
+    const cookies = new Cookies();
+
     try {
       const response = await axios.post(`${REACT_APP_SERVER_DOMAIN}/signup`, {
         email,
@@ -17,14 +19,22 @@ export const useAuthStore = create((set) => ({
         password,
       });
 
+      // set the cookie
+      cookies.set("TOKEN", response.data.token, {
+        path: "/",
+        expires: new Date(new Date().getTime() + 2 * 60 * 60 * 1000),
+      });
+
+      // redirect user to the auth (index page) page
+      window.location.href = "/";
+
       set({ isLoggedIn: true });
 
       toast.success("SignUp Successful...!");
-      console.log(response.data);
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.log(`error from signup auth store ${error.message}`);
+      console.error(`error from signup auth store ${error.message}`);
     }
   },
 
@@ -41,6 +51,7 @@ export const useAuthStore = create((set) => ({
       // set the cookie
       cookies.set("TOKEN", response.data.token, {
         path: "/",
+        expires: new Date(new Date().getTime() + 2 * 60 * 60 * 1000),
       });
 
       // redirect user to the auth (index page) page
@@ -49,11 +60,10 @@ export const useAuthStore = create((set) => ({
       set({ isLoggedIn: true });
 
       toast.success("Login Successful...!");
-      console.log(response.data);
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.log(`error from login auth store ${error.message}`);
+      console.error(`error from login auth store ${error.message}`);
     }
   },
 
@@ -74,7 +84,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.log(`error from logout auth store ${error.message}`);
+      console.error(`error from logout auth store ${error.message}`);
     }
   },
 }));
