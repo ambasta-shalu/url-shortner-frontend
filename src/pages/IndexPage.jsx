@@ -1,15 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/IndexPage.css";
 import Navbar from "../components/Navbar";
 import Cookies from "universal-cookie";
 import { useUserStore } from "../store/UserStore";
+import { useUrlStore } from "../store/UrlStore";
 
 const cookies = new Cookies();
 const token = cookies.get("TOKEN");
 
 function IndexPage() {
+  const [linkInput, setlinkInput] = useState("");
+
   const fetchUserData = useUserStore((state) => state.userData);
   const user = useUserStore((state) => state.user);
+  const fetchUrl = useUrlStore((state) => state.url);
+  const outputUrl = useUrlStore((state) => state.outputUrl);
+
+  const handleShorten = function () {
+    fetchUrl(linkInput);
+  };
 
   useEffect(() => {
     fetchUserData();
@@ -37,12 +46,20 @@ function IndexPage() {
               className="index__input__field"
               type="text"
               placeholder="Shorten your link"
+              value={linkInput}
+              onChange={(e) => setlinkInput(e.target.value)}
             />
-            <button className="signup__button shorten__button">SHORTEN</button>
+
+            <button
+              className="signup__button shorten__button"
+              onClick={handleShorten}
+            >
+              SHORTEN
+            </button>
           </form>
         </div>
         <div className="index__output">
-          <p className="index__output__field"></p>
+          <p className="index__output__field">{outputUrl}</p>
           <button className="logout__button copy__button">Copy Link</button>
         </div>
       </div>
