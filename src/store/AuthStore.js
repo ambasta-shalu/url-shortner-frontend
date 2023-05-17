@@ -2,6 +2,7 @@ import { create } from "zustand";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "universal-cookie";
+import { REACT_APP_SERVER_DOMAIN } from "../../config";
 
 export const useAuthStore = create((set) => ({
   isLoggedIn: false,
@@ -9,15 +10,12 @@ export const useAuthStore = create((set) => ({
   // handle signup
   signup: async (email, firstName, lastName, password) => {
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/signup`,
-        {
-          email,
-          firstName,
-          lastName,
-          password,
-        }
-      );
+      const response = await axios.post(`${REACT_APP_SERVER_DOMAIN}/signup`, {
+        email,
+        firstName,
+        lastName,
+        password,
+      });
 
       set({ isLoggedIn: true });
 
@@ -26,7 +24,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.log(`error from signupauth store ${error.message}`);
+      console.log(`error from signup auth store ${error.message}`);
     }
   },
 
@@ -35,13 +33,10 @@ export const useAuthStore = create((set) => ({
     const cookies = new Cookies();
 
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/login`,
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${REACT_APP_SERVER_DOMAIN}/login`, {
+        email,
+        password,
+      });
 
       // set the cookie
       cookies.set("TOKEN", response.data.token, {
@@ -58,7 +53,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.log(`error from loginauth store ${error.message}`);
+      console.log(`error from login auth store ${error.message}`);
     }
   },
 
@@ -70,8 +65,8 @@ export const useAuthStore = create((set) => ({
       // destroy the cookie
       cookies.remove("TOKEN", { path: "/" });
 
-      // redirect user to the Index Page
-      window.location.href = "/";
+      // redirect user to the Login Page
+      window.location.href = "/login";
 
       set({ isLoggedIn: false });
 
@@ -79,7 +74,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.log(`error from logoutauth store ${error.message}`);
+      console.log(`error from logout auth store ${error.message}`);
     }
   },
 }));

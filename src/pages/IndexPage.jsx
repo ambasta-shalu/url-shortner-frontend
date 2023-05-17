@@ -40,12 +40,12 @@ function IndexPage() {
               type="text"
               placeholder="Shorten your link"
             />
-            <button className="signup__button">SHORTEN</button>
+            <button className="signup__button shorten__button">SHORTEN</button>
           </form>
         </div>
         <div className="index__output">
           <p className="index__output__field"></p>
-          <button className="login__button">Copy Link</button>
+          <button className="login__button copy__button">Copy Link</button>
         </div>
       </div>
       <button className="logout__button" type="submit" onClick={() => logout()}>

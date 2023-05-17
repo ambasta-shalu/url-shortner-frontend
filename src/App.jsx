@@ -9,7 +9,7 @@ import ProtectedRoutes from "./helper/ProtectedRoutes";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <IndexPage />,
+    element: <ProtectedRoutes child={<IndexPage />} />,
   },
   {
     path: "/login",
