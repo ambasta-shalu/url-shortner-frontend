@@ -13,7 +13,7 @@ function RedirectPage() {
 
   return (
     <div className="redirect__page">
-      <div>Redirecting...</div>
+      <h1>Redirecting 🤓 ...</h1>
     </div>
   );
 }

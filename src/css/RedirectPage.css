@@ -1,8 +1,9 @@
-.redirect__page > div {
+.redirect__page > h1 {
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   text-align: center;
   padding: 5rem;
+  margin-top: 5rem;
 }
