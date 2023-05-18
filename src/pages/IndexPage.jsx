@@ -24,7 +24,7 @@ function IndexPage() {
   };
 
   const handlecopy = function () {
-    copy(`${window.location.hostname}:5173/${outputUrl?.shortUrl}`);
+    copy(`${window.location.hostname}/${outputUrl?.shortUrl}`);
     toast.success("Copied to Clipboard!");
   };
 
