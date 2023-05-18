@@ -7,7 +7,7 @@ import { REACT_APP_SERVER_DOMAIN } from "../../config";
 export const useUrlStore = create((set) => ({
   outputUrl: null,
 
-  // handle longUrl
+  // handle fetch short url
   url: async (longUrl) => {
     const cookie = new Cookies();
     const token = cookie.get("TOKEN");
@@ -32,6 +32,22 @@ export const useUrlStore = create((set) => ({
       // handle error
       toast.error(error.message);
       console.error(`error from url store ${error.message}`);
+    }
+  },
+
+  // handle redirect
+  fetchLongUrl: async (shortId) => {
+    try {
+      const response = await axios.get(
+        REACT_APP_SERVER_DOMAIN + "/url/" + shortId
+      );
+
+      const longurl = response.data.longUrl;
+      window.location.replace(longurl);
+    } catch (error) {
+      // handle error
+      toast.error(error.message);
+      console.error(`error from fetchLongUrl url store ${error.message}`);
     }
   },
 }));

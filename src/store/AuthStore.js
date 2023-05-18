@@ -22,6 +22,7 @@ export const useAuthStore = create((set) => ({
       // set the cookie
       cookies.set("TOKEN", response.data.token, {
         path: "/",
+        // expires in 2 hour
         expires: new Date(new Date().getTime() + 2 * 60 * 60 * 1000),
       });
 
@@ -51,6 +52,7 @@ export const useAuthStore = create((set) => ({
       // set the cookie
       cookies.set("TOKEN", response.data.token, {
         path: "/",
+        // expires in 2 hour
         expires: new Date(new Date().getTime() + 2 * 60 * 60 * 1000),
       });
 
