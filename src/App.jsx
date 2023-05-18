@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <SignupPage />,
   },
   {
-    path: "/url/:code",
+    path: "/:code",
     element: <RedirectPage />,
   },
 ]);
