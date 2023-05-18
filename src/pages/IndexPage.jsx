@@ -66,7 +66,7 @@ function IndexPage() {
         {outputUrl && (
           <div className="index__output">
             <p className="index__output__field">
-              {window.location.hostname}:5173/{outputUrl?.shortUrl}
+              {window.location.hostname}/{outputUrl?.shortUrl}
             </p>
             <button className="logout__button" onClick={handlecopy}>
               Copy Link
