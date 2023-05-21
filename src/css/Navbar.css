@@ -29,7 +29,7 @@
   color: black;
 }
 
-.signup__button {
+.urls__button {
   padding: 0.75rem 1rem;
   margin: 2rem;
   background-color: blue;
@@ -42,7 +42,7 @@
   letter-spacing: 2px;
 }
 
-.signup__button:hover {
+.urls__button:hover {
   background-color: rgba(0, 0, 255, 0.2);
   color: black;
 }

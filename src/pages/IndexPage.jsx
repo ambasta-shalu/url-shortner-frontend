@@ -25,7 +25,7 @@ function IndexPage() {
 
   const handlecopy = function () {
     copy(`${window.location.hostname}/${outputUrl?.shortUrl}`);
-    toast.success("Copied to Clipboard!");
+    toast.success("Copied to Clipboard! 📋");
   };
 
   useEffect(() => {
@@ -58,7 +58,7 @@ function IndexPage() {
               value={linkInput}
               onChange={(e) => setlinkInput(e.target.value)}
             />
-            <button className="signup__button" onClick={handleShorten}>
+            <button className="urls__button" onClick={handleShorten}>
               SHORTEN
             </button>
           </form>

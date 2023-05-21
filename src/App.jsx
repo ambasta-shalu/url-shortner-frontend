@@ -5,6 +5,7 @@ import IndexPage from "./pages/IndexPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import RedirectPage from "./pages/RedirectPage";
+import UrlsPage from "./pages/UrlsPage";
 import ProtectedRoutes from "./helper/ProtectedRoutes";
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/:code",
     element: <RedirectPage />,
+  },
+  {
+    path: "/urls",
+    element: <UrlsPage />,
   },
 ]);
 
