@@ -1,13 +1,14 @@
 import { create } from "zustand";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 import Cookies from "universal-cookie";
 import { REACT_APP_SERVER_DOMAIN } from "../../config";
 
 export const useUserStore = create((set) => ({
-  user: null,
+  userData: null,
 
-  // handle user data
-  userData: async () => {
+  // fetch user data
+  fetchUserData: async () => {
     const cookie = new Cookies();
     const token = cookie.get("TOKEN");
 
@@ -18,10 +19,11 @@ export const useUserStore = create((set) => ({
         },
       });
 
-      set({ user: response.data });
+      set({ userData: response.data });
     } catch (error) {
       // handle error
-      console.error(`error from user store ${error.message}`);
+      toast.error(error.message);
+      console.error(`error from userstore ${error.message}`);
     }
   },
 }));

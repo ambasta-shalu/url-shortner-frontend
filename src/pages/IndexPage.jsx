@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "../css/IndexPage.css";
 import Navbar from "../components/Navbar";
-import Cookies from "universal-cookie";
 import { Toaster, toast } from "react-hot-toast";
 import { useUserStore } from "../store/UserStore";
 import { useUrlStore } from "../store/UrlStore";
 import copy from "copy-to-clipboard";
 
-const cookies = new Cookies();
-const token = cookies.get("TOKEN");
-
 function IndexPage() {
   const [linkInput, setlinkInput] = useState("");
 
-  const fetchUserData = useUserStore((state) => state.userData);
-  const user = useUserStore((state) => state.user);
-  const fetchUrl = useUrlStore((state) => state.url);
-  const outputUrl = useUrlStore((state) => state.outputUrl);
+  const fetchUserData = useUserStore((state) => state.fetchUserData);
+  const userData = useUserStore((state) => state.userData);
+
+  const fetchShortUrl = useUrlStore((state) => state.fetchShortUrl);
+  const shortUrl = useUrlStore((state) => state.shortUrl);
 
   const handleShorten = function (event) {
     event.preventDefault();
-    fetchUrl(linkInput);
+    fetchShortUrl(linkInput);
   };
 
   const handlecopy = function () {
-    copy(`${window.location.hostname}/${outputUrl?.shortUrl}`);
+    copy(`${window.location.hostname}/${shortUrl?.shortUrl}`);
     toast.success("Copied to Clipboard! 📋");
   };
 
@@ -37,11 +34,11 @@ function IndexPage() {
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <Navbar />
       <div className="index__contents">
-        {user ? (
+        {userData ? (
           <h2 className="index__user">
             Welcome back{" "}
             <span className="user__name">
-              {user?.firstName} {user?.lastName}{" "}
+              {userData?.firstName} {userData?.lastName}{" "}
             </span>
             👋
           </h2>
@@ -63,10 +60,10 @@ function IndexPage() {
             </button>
           </form>
         </div>
-        {outputUrl && (
+        {shortUrl && (
           <div className="index__output">
             <p className="index__output__field">
-              {window.location.hostname}/{outputUrl?.shortUrl}
+              {window.location.hostname}/{shortUrl?.shortUrl}
             </p>
             <button className="logout__button" onClick={handlecopy}>
               Copy Link

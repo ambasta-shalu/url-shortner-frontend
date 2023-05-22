@@ -35,7 +35,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from signup auth store ${error.message}`);
+      console.error(`error from signup authstore ${error.message}`);
     }
   },
 
@@ -65,7 +65,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from login auth store ${error.message}`);
+      console.error(`error from login authstore ${error.message}`);
     }
   },
 
@@ -86,7 +86,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from logout auth store ${error.message}`);
+      console.error(`error from logout authstore ${error.message}`);
     }
   },
 }));
