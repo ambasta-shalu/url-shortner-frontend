@@ -15,7 +15,7 @@ function UrlsPage() {
     <div className="url__page">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <div>
-        {allUrls?.urls.map((it) => (
+        {allUrls?.allUrls.map((it) => (
           <p key={it._id}>{it.shortUrl}</p>
         ))}
       </div>
