@@ -6,7 +6,6 @@ import { REACT_APP_SERVER_DOMAIN } from "../../config";
 
 export const useUrlStore = create((set) => ({
   shortUrl: null,
-  longUrl: null,
   allUrls: null,
 
   // fetch short url
@@ -43,8 +42,8 @@ export const useUrlStore = create((set) => ({
         REACT_APP_SERVER_DOMAIN + "/url/" + shortId
       );
 
-      set({ longurl: response.data.longUrl });
-      window.location.replace(longurl);
+      const longUrl = response.data.longUrl;
+      window.location.replace(longUrl);
     } catch (error) {
       // handle error
       toast.error(error.message);
