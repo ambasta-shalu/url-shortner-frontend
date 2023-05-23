@@ -1,0 +1,41 @@
+.urls__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 1rem 0rem;
+}
+
+.urls {
+  color: blueviolet;
+}
+
+.urls:focus,
+.urls:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.urls__c__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.action {
+  cursor: pointer;
+  font-size: 2rem;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  color: gray;
+}
+
+.action:focus,
+.action:hover {
+  transform: scale(1.2);
+  transition: all 0.5s;
+  color: cornflowerblue;
+}

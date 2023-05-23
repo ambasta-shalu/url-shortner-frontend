@@ -1,3 +1,23 @@
 .urls__page {
   padding: 2rem;
+  margin: 2rem;
+  border: 1px;
+  border-style: solid;
+  border-color: gray;
+}
+
+.urls__page__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.urls__page__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-decoration: underline;
 }

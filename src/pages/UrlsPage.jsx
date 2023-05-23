@@ -17,10 +17,10 @@ function UrlsPage() {
       <Toaster position="top-center" reverseOrder={false}></Toaster>
 
       <div className="urls__page__content">
-        <div>
-          <h2>Long Urls</h2>
-          <h2>Short Urls</h2>
-          <h2>Actions</h2>
+        <div className="urls__page__header">
+          <h2>Long Url</h2>
+          <h2>Short Url</h2>
+          <h2>Action</h2>
         </div>
 
         <div>
