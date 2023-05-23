@@ -12,21 +12,43 @@ function UrlsContainer(props) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   };
 
-  const handlecopy = function () {
+  const handleShortUrlCopy = function () {
     copy(`${window.location.hostname}/${url?.shortUrl}`);
     toast.success("Short URL Copied to Clipboard! 📋");
+  };
+
+  const handleLongUrlCopy = function () {
+    copy(`${url?.longUrl}`);
+    toast.success("Long URL Copied to Clipboard! 📋");
+  };
+
+  const handleDelete = function () {
+    toast.success("delete testing 🦜");
   };
 
   return (
     <div key={url._id} className="urls__container">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
-      <div className="urls">{truncate(url.longUrl, 25)}</div>
-      <div className="urls">
+
+      <div className="urls" onClick={handleLongUrlCopy}>
+        {truncate(url.longUrl, 25)}
+      </div>
+
+      <div className="urls" onClick={handleShortUrlCopy}>
         {window.location.hostname}/{url.shortUrl}
       </div>
+
       <div className="urls__c__actions">
-        <AiFillDelete className="action" title="Delete" />
-        <RxClipboardCopy className="action" title="Copy" onClick={handlecopy} />
+        <AiFillDelete
+          className="action"
+          title="Delete"
+          onClick={handleDelete}
+        />
+        <RxClipboardCopy
+          className="action"
+          title="Copy"
+          onClick={handleShortUrlCopy}
+        />
       </div>
     </div>
   );
