@@ -30,12 +30,12 @@
   cursor: pointer;
   font-size: 2rem;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
-  color: gray;
+  color: cornflowerblue;
 }
 
 .action:focus,
 .action:hover {
   transform: scale(1.2);
   transition: all 0.5s;
-  color: cornflowerblue;
+  color: gray;
 }
