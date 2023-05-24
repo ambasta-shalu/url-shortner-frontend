@@ -101,7 +101,7 @@ function SignupPage() {
           value={formik.values.cPassword}
         />
         <button className="signup__btn" type="submit">
-          Sign In
+          Sign Up
         </button>
       </form>
       <p>
