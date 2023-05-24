@@ -83,7 +83,7 @@ export const useUrlStore = create((set) => ({
         },
       });
 
-      toast.success("Url Deleted Successfully! 🤓");
+      toast.success("Url Deleted! 👽");
     } catch (error) {
       // handle error
       toast.error(error.message);
