@@ -4,9 +4,12 @@ import { AiFillDelete } from "react-icons/ai";
 import { RxClipboardCopy } from "react-icons/rx";
 import { Toaster, toast } from "react-hot-toast";
 import copy from "copy-to-clipboard";
+import { useUrlStore } from "../store/UrlStore";
 
 function UrlsContainer(props) {
   const { url } = props;
+
+  const delUrl = useUrlStore((state) => state.delUrl);
 
   const truncate = function (string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
@@ -23,11 +26,11 @@ function UrlsContainer(props) {
   };
 
   const handleDelete = function () {
-    toast.success("delete testing 🦜");
+    delUrl(url._id);
   };
 
   return (
-    <div key={url._id} className="urls__container">
+    <div className="urls__container">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
 
       <div className="urls" onClick={handleLongUrlCopy}>
