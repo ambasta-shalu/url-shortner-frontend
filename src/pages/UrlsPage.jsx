@@ -11,10 +11,11 @@ function UrlsPage() {
 
   const fetchAllUrls = useUrlStore((state) => state.fetchAllUrls);
   const allUrls = useUrlStore((state) => state.allUrls);
+  const deletedUrlCount = useUrlStore((state) => state.deletedUrlCount);
 
   useEffect(() => {
     fetchAllUrls();
-  }, []);
+  }, [deletedUrlCount]);
 
   const handleHome = function () {
     navigate("/");

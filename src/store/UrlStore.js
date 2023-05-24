@@ -7,6 +7,7 @@ import { REACT_APP_SERVER_DOMAIN } from "../../config";
 export const useUrlStore = create((set) => ({
   shortUrl: null,
   allUrls: null,
+  deletedUrlCount: 0,
 
   // fetch short url
   fetchShortUrl: async (longUrl) => {
@@ -77,11 +78,16 @@ export const useUrlStore = create((set) => ({
     const token = cookie.get("TOKEN");
 
     try {
-      await axios.delete(`${REACT_APP_SERVER_DOMAIN}/urls/${urlId}`, {
-        headers: {
-          authorization: token,
-        },
-      });
+      const response = await axios.delete(
+        `${REACT_APP_SERVER_DOMAIN}/urls/${urlId}`,
+        {
+          headers: {
+            authorization: token,
+          },
+        }
+      );
+
+      set({ deletedUrlCount: response.data.deletedCount });
 
       toast.success("Url Deleted! 👽");
     } catch (error) {
