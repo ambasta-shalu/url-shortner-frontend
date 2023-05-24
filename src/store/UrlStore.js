@@ -57,7 +57,7 @@ export const useUrlStore = create((set) => ({
     const token = cookie.get("TOKEN");
 
     try {
-      const response = await axios.get(`${REACT_APP_SERVER_DOMAIN}/urls`, {
+      const response = await axios.get(`${REACT_APP_SERVER_DOMAIN}/urls/`, {
         headers: {
           authorization: token,
         },
@@ -68,6 +68,26 @@ export const useUrlStore = create((set) => ({
       // handle error
       toast.error(error.message);
       console.error(`error from fetchAllUrls urlstore ${error.message}`);
+    }
+  },
+
+  // delete url
+  delUrl: async (urlId) => {
+    const cookie = new Cookies();
+    const token = cookie.get("TOKEN");
+
+    try {
+      await axios.delete(`${REACT_APP_SERVER_DOMAIN}/urls/${urlId}`, {
+        headers: {
+          authorization: token,
+        },
+      });
+
+      toast.success("Url Deleted Successfully! 🤓");
+    } catch (error) {
+      // handle error
+      toast.error(error.message);
+      console.error(`error from delUrl urlstore ${error.message}`);
     }
   },
 }));
