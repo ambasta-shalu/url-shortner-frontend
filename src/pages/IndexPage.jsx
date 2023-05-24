@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../css/IndexPage.css";
 import Navbar from "../components/Navbar";
 import { Toaster, toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { useUserStore } from "../store/UserStore";
 import { useUrlStore } from "../store/UrlStore";
 import copy from "copy-to-clipboard";
 
 function IndexPage() {
+  const navigate = useNavigate();
+
   const [linkInput, setlinkInput] = useState("");
 
   const fetchUserData = useUserStore((state) => state.fetchUserData);
@@ -14,6 +17,10 @@ function IndexPage() {
 
   const fetchShortUrl = useUrlStore((state) => state.fetchShortUrl);
   const shortUrl = useUrlStore((state) => state.shortUrl);
+
+  const handleMyUrls = function () {
+    navigate("/urls");
+  };
 
   const handleShorten = function (event) {
     event.preventDefault();
@@ -32,7 +39,7 @@ function IndexPage() {
   return (
     <div className="index__page">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
-      <Navbar />
+      <Navbar btnName="My Urls" btnFun={handleMyUrls} />
       <div className="index__contents">
         {userData ? (
           <h2 className="index__user">

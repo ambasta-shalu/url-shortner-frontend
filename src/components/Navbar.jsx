@@ -1,19 +1,15 @@
 import React from "react";
 import "../css/Navbar.css";
 import Logo from "../components/Logo";
-import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/AuthStore";
 
-function Navbar() {
-  const navigate = useNavigate();
+function Navbar(props) {
+  const { btnName, btnFun } = props;
+
   const logout = useAuthStore((state) => state.logout);
 
   const handleLogout = function () {
     logout();
-  };
-
-  const handleUrls = function () {
-    navigate("/urls");
   };
 
   return (
@@ -25,8 +21,8 @@ function Navbar() {
         <button className="logout__button" onClick={handleLogout}>
           Logout
         </button>
-        <button className="urls__button" onClick={handleUrls}>
-          My URLs
+        <button className="urls__button" onClick={btnFun}>
+          {btnName}
         </button>
       </div>
     </div>

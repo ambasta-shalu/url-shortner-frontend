@@ -1,5 +1,5 @@
 .urls__page {
-  margin: 2rem;
+  margin: 0rem;
 }
 
 .urls__page__msg {
@@ -9,7 +9,6 @@
   right: 0;
   text-align: center;
   padding: 5rem;
-  margin-top: 5rem;
 }
 
 .urls__page__content {

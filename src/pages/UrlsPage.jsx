@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import "../css/UrlsPage.css";
 import { useUrlStore } from "../store/UrlStore";
 import { Toaster, toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import UrlsContainer from "../components/UrlsContainer";
+import Navbar from "../components/Navbar";
 
 function UrlsPage() {
+  const navigate = useNavigate();
+
   const fetchAllUrls = useUrlStore((state) => state.fetchAllUrls);
   const allUrls = useUrlStore((state) => state.allUrls);
 
@@ -12,9 +16,14 @@ function UrlsPage() {
     fetchAllUrls();
   }, []);
 
+  const handleHome = function () {
+    navigate("/");
+  };
+
   return (
     <div className="urls__page">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
+      <Navbar btnName="Home" btnFun={handleHome} />
 
       {allUrls?.allUrls.length ? (
         <div className="urls__page__content">
