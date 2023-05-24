@@ -31,7 +31,7 @@ function UrlsPage() {
           </div>
         </div>
       ) : (
-        <h1 className="urls__page__msg">You have no URLs 😷</h1>
+        <h1 className="urls__page__msg">You have No URLs 😷</h1>
       )}
     </div>
   );
