@@ -1,9 +1,15 @@
 .urls__page {
-  padding: 2rem;
   margin: 2rem;
-  border: 1px;
-  border-style: solid;
-  border-color: gray;
+}
+
+.urls__page__msg {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 5rem;
+  margin-top: 5rem;
 }
 
 .urls__page__content {
@@ -11,6 +17,10 @@
   flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
+  padding: 2rem;
+  border: 1px;
+  border-style: solid;
+  border-color: gray;
 }
 
 .urls__page__header {
