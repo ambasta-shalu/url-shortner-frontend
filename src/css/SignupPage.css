@@ -1,42 +1,31 @@
 .signup__page {
-  
-
   position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
   z-index: 1;
 }
 
-.shape{
+.shape {
   height: 8rem;
   width: 8rem;
   position: absolute;
   border-radius: 50%;
 }
 
-
-.shape:first-child{
-  background: linear-gradient(
-      #1845ad,
-      #23a2f6
-  );
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
   left: -80px;
   top: -80px;
 }
 
-.shape:nth-child(2){
-  background: linear-gradient(
-      to right,
-      #ff512f,
-      #f09819
-  );
+.shape:nth-child(2) {
+  background: linear-gradient(to right, #ff512f, #f09819);
   right: -30px;
   bottom: -80px;
 }
 
-
-.signup__content{
+.signup__content {
   z-index: 5;
   max-width: 30rem;
   display: flex;
@@ -48,12 +37,12 @@
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   gap: 1rem;
-
-  background-color: rgba(255,255,255,0.13);
+  background-color: rgba(255, 255, 255, 0.13);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
+
 .signup__heading {
   margin-top: 1rem;
   color: var(--COLOR-LIGHT);
@@ -70,11 +59,9 @@
 }
 
 .signup__form > input {
-
   color: var(--COLOR-LIGHT);
-    background-color: rgba(255,255,255,0.07);
-    border-radius: 0.2rem;
-
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 0.2rem;
   border: none;
   outline: none;
   padding: 0.5rem 1rem;
@@ -85,7 +72,6 @@
 .signup__btn {
   width: 20rem;
   padding: 0.5rem 1rem;
-  
   background-color: var(--THEME-COLOR-LIGHT);
   color: var(--COLOR-LIGHT);
   outline: none;
@@ -101,7 +87,7 @@
   color: var(--COLOR-DARK);
 }
 
-.signup__content > p{
+.signup__content > p {
   margin-bottom: 1rem;
 }
 

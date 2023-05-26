@@ -27,7 +27,9 @@
   padding: 0.75rem;
   outline-width: 0;
   border: none;
-  color: var(--BODY-BG-COLOR);
+  color: var(--COLOR-LIGHT);
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 0.2rem;
 }
 
 .index__output {
@@ -39,10 +41,11 @@
 }
 
 .index__output__field {
-  color: var(--THEME-COLOR-LIGHT);
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
-  background-color: rgba(47, 79, 79, 0.2);
+  color: var(--THEME-COLOR-LIGHT);
+  background-color: rgba(255, 255, 255, 0.07);
   margin-top: 1.5rem;
   border-radius: 5rem;
+  letter-spacing: 1px;
 }

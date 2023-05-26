@@ -42,35 +42,40 @@ function LoginPage() {
 
   return (
     <div className="login__page">
+      <div className="shape"></div>
+      <div className="shape"></div>
       <Toaster position="top-center" reverseOrder={false}></Toaster>
-      <h1 className="login__heading">Login Here</h1>
-      <form className="login__form" onSubmit={formik.handleSubmit}>
-        <input
-          type="email"
-          placeholder="abc@mail.com"
-          id="email"
-          name="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-        <input
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        <button className="login__btn" type="submit">
-          Login
-        </button>
-      </form>
-      <p>
-        New User?{" "}
-        <span className="login__link__signup" onClick={handleClick}>
-          Sign Up Now
-        </span>
-      </p>
+
+      <div className="login__content">
+        <h1 className="login__heading">Login Here</h1>
+        <form className="login__form" onSubmit={formik.handleSubmit}>
+          <input
+            type="email"
+            placeholder="abc@mail.com"
+            id="email"
+            name="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+          />
+          <input
+            type="password"
+            placeholder="********"
+            id="password"
+            name="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+          />
+          <button className="login__btn" type="submit">
+            Login
+          </button>
+        </form>
+        <p>
+          New User?{" "}
+          <span className="login__link__signup" onClick={handleClick}>
+            Sign Up Now
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

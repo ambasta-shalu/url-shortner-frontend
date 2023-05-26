@@ -72,7 +72,7 @@ function IndexPage() {
             <p className="index__output__field">
               {window.location.hostname}/{shortUrl?.shortUrl}
             </p>
-            <button className="logout__button" onClick={handlecopy}>
+            <button className="urls__button" onClick={handlecopy}>
               Copy Link
             </button>
           </div>
