@@ -56,60 +56,65 @@ function SignupPage() {
 
   return (
     <div className="signup__page">
+      <div className="shape"></div>
+      <div className="shape"></div>
       <Toaster position="top-center" reverseOrder={false}></Toaster>
-      <h1 className="signup__heading">Sign Up Here</h1>
-      <form className="signup__form" onSubmit={formik.handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          id="email"
-          name="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-        {/* {formik.errors.email && <p>{formik.errors.email}</p>} */}
-        <input
-          type="text"
-          placeholder="First Name"
-          id="firstName"
-          name="firstName"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          id="lastName"
-          name="lastName"
-          onChange={formik.handleChange}
-          value={formik.values.lastName}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          id="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          id="cPassword"
-          name="cPassword"
-          onChange={formik.handleChange}
-          value={formik.values.cPassword}
-        />
-        <button className="signup__btn" type="submit">
-          Sign Up
-        </button>
-      </form>
-      <p>
-        Already Registered?{" "}
-        <span className="signup__link__login" onClick={handleClick}>
-          Login Now
-        </span>
-      </p>
+
+      <div className="signup__content">
+        <h1 className="signup__heading">Sign Up Here</h1>
+        <form className="signup__form" onSubmit={formik.handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            id="email"
+            name="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+          />
+          {/* {formik.errors.email && <p>{formik.errors.email}</p>} */}
+          <input
+            type="text"
+            placeholder="First Name"
+            id="firstName"
+            name="firstName"
+            onChange={formik.handleChange}
+            value={formik.values.firstName}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            id="lastName"
+            name="lastName"
+            onChange={formik.handleChange}
+            value={formik.values.lastName}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            id="cPassword"
+            name="cPassword"
+            onChange={formik.handleChange}
+            value={formik.values.cPassword}
+          />
+          <button className="signup__btn" type="submit">
+            Sign Up
+          </button>
+        </form>
+        <p>
+          Already Registered?{" "}
+          <span className="signup__link__login" onClick={handleClick}>
+            Login Now
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

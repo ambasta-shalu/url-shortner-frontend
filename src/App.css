@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+:root {
+  /* FONT-FAMILY-VARIABLE */
+  --FF: "Architects Daughter", cursive;
+
+  /* COLORS-VARIABLE */
+  --BODY-BG-COLOR: rgb(0, 0, 0);
+  --THEME-COLOR-DARK: #141428;
+  --BODY-BG-IMG: linear-gradient(to left, var(--THEME-COLOR-DARK), #141414);
+  --THEME-COLOR-LIGHT: rgb(100, 149, 237);
+  --COLOR-DARK: #647878;
+  --COLOR-LIGHT: rgb(224, 255, 255);
+
+  --ERROR-COLOR: #ff0033;
+
+  /* SHADOW */
+  --SHADOW: 0px 5px 10px 0px rgba(0, 0, 0, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--FF);
+}
+
+body {
+  background-color: var(--BODY-BG-COLOR);
+  background-image: var(--BODY-BG-IMG);
+  color: var(--COLOR-DARK);
+}

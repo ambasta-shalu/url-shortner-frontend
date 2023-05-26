@@ -10,5 +10,5 @@
 }
 
 .logo__title {
-  color: blue;
+  color: var(--THEME-COLOR-LIGHT);
 }

@@ -14,7 +14,7 @@
 }
 
 .user__name {
-  color: cornflowerblue;
+  color: var(--THEME-COLOR-LIGHT);
 }
 
 .index__contents > h1 {
@@ -27,7 +27,7 @@
   padding: 0.75rem;
   outline-width: 0;
   border: none;
-  color: black;
+  color: var(--BODY-BG-COLOR);
 }
 
 .index__output {
@@ -39,9 +39,10 @@
 }
 
 .index__output__field {
-  color: blueviolet;
+  color: var(--THEME-COLOR-LIGHT);
   font-size: 1.2rem;
-  padding: 0.5rem;
-  background-color: lightblue;
+  padding: 0.5rem 1rem;
+  background-color: rgba(47, 79, 79, 0.2);
   margin-top: 1.5rem;
+  border-radius: 5rem;
 }
