@@ -14,15 +14,15 @@
 }
 
 .shape:first-child {
-  background: linear-gradient(#1845ad, #23a2f6);
-  left: -80px;
-  top: -80px;
+  background: linear-gradient(#ff512f, #f09819);
+  left: -4rem;
+  top: -3rem;
 }
 
 .shape:nth-child(2) {
-  background: linear-gradient(to right, #ff512f, #f09819);
-  right: -30px;
-  bottom: -80px;
+  background: linear-gradient(to right, #1845ad, #23a2f6);
+  right: -3rem;
+  bottom: -4rem;
 }
 
 .signup__content {
