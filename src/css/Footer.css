@@ -1,0 +1,36 @@
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: gray;
+  text-align: center;
+  position: fixed;
+}
+
+.footer__content {
+  width: 100%;
+  background-color: var(--THEME-COLOR);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: var(--BODY-BG-COLOR);
+}
+
+.f__text {
+  font-weight: 900;
+  display: inline-block;
+  line-height: 1;
+  font-style: normal;
+  font-variant: normal;
+  padding: 0.2rem;
+}
+
+.f__heart__symbol {
+  color: var(--ERROR-COLOR);
+}
+
+.dev__name {
+  text-decoration: underline;
+}

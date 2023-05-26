@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useUserStore } from "../store/UserStore";
 import { useUrlStore } from "../store/UrlStore";
 import copy from "copy-to-clipboard";
+import Footer from "../components/Footer";
 
 function IndexPage() {
   const navigate = useNavigate();
@@ -81,6 +82,7 @@ function IndexPage() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
