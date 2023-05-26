@@ -38,8 +38,11 @@ function IndexPage() {
 
   return (
     <div className="index__page">
+      <div className="shape"></div>
+      <div className="shape"></div>
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <Navbar btnName="My Urls" btnFun={handleMyUrls} />
+
       <div className="index__contents">
         {userData ? (
           <h2 className="index__user">

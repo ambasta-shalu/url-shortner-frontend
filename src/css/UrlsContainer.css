@@ -8,14 +8,14 @@
 }
 
 .urls {
-  color: blueviolet;
+  color: var(--COLOR-LIGHT);
 }
 
 .urls:focus,
 .urls:hover {
   text-decoration: underline;
   cursor: pointer;
-  color: rgba(138, 43, 226, 0.6);
+  color: var(--COLOR-DARK);
 }
 
 .urls__c__actions {
@@ -27,16 +27,30 @@
   gap: 1.5rem;
 }
 
-.action {
+.action__del {
   cursor: pointer;
   font-size: 2rem;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
-  color: cornflowerblue;
+  color: var(--ERROR-COLOR);
 }
 
-.action:focus,
-.action:hover {
-  transform: scale(1.2);
+.action__del:focus,
+.action__del:hover {
+  transform: scale(1.5);
   transition: all 0.5s;
-  color: gray;
+  color: burlywood;
+}
+
+.action__copy {
+  cursor: pointer;
+  font-size: 2rem;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  color: var(--COLOR-LIGHT);
+}
+
+.action__copy:focus,
+.action__copy:hover {
+  transform: scale(1.4);
+  transition: all 0.5s;
+  color: var(--COLOR-DARK);
 }

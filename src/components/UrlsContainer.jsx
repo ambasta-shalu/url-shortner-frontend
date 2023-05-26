@@ -43,12 +43,12 @@ function UrlsContainer(props) {
 
       <div className="urls__c__actions">
         <AiFillDelete
-          className="action"
+          className="action__del"
           title="Delete"
           onClick={handleDelete}
         />
         <RxClipboardCopy
-          className="action"
+          className="action__copy"
           title="Copy"
           onClick={handleShortUrlCopy}
         />

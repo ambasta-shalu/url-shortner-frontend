@@ -23,6 +23,8 @@ function UrlsPage() {
 
   return (
     <div className="urls__page">
+      <div className="shape"></div>
+      <div className="shape"></div>
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <Navbar btnName="Home" btnFun={handleHome} />
 
