@@ -3,19 +3,17 @@
   left: 0;
   right: 0;
   width: 100%;
-  background-color: gray;
   text-align: center;
   position: fixed;
+  background-color: var(--BODY-BG-COLOR);
+  color: var(--COLOR-LIGHT);
 }
 
 .footer__content {
-  width: 100%;
-  background-color: var(--THEME-COLOR);
   text-align: center;
-  padding: 1.5rem;
+  padding: 1rem;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
-  color: var(--BODY-BG-COLOR);
 }
 
 .f__text {
@@ -28,9 +26,10 @@
 }
 
 .f__heart__symbol {
-  color: var(--ERROR-COLOR);
+  color: rgb(255, 0, 0);
 }
 
 .dev__name {
   text-decoration: underline;
+  cursor: pointer;
 }

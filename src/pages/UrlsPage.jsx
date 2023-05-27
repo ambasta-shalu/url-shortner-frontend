@@ -5,6 +5,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import UrlsContainer from "../components/UrlsContainer";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function UrlsPage() {
   const navigate = useNavigate();
@@ -45,6 +46,7 @@ function UrlsPage() {
       ) : (
         <h1 className="urls__page__msg">You have No URLs 😷</h1>
       )}
+      <Footer />
     </div>
   );
 }

@@ -24,6 +24,7 @@
   letter-spacing: 2px;
 }
 
+.logout__button:focus,
 .logout__button:hover {
   background-color: var(--COLOR-DARK);
   color: var(--COLOR-LIGHT);
@@ -42,6 +43,7 @@
   letter-spacing: 2px;
 }
 
+.urls__button:focus,
 .urls__button:hover {
   background-color: var(--COLOR-DARK);
   color: var(--COLOR-LIGHT);

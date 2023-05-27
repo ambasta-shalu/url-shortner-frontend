@@ -63,6 +63,7 @@
   letter-spacing: 2px;
 }
 
+.login__btn:focus,
 .login__btn:hover {
   background-color: var(--COLOR-LIGHT);
   color: var(--COLOR-DARK);
@@ -77,6 +78,7 @@
   color: var(--THEME-COLOR-LIGHT);
 }
 
+.login__link__signup:focus,
 .login__link__signup:hover {
   text-decoration: underline;
   color: var(--COLOR-LIGHT);
