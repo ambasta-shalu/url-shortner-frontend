@@ -26,6 +26,7 @@ function IndexPage() {
   const handleShorten = function (event) {
     event.preventDefault();
     fetchShortUrl(linkInput);
+    setlinkInput("");
   };
 
   const handlecopy = function () {
