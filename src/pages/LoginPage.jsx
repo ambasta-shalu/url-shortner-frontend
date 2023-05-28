@@ -48,6 +48,7 @@ function LoginPage() {
 
       <div className="login__content">
         <h1 className="login__heading">Login Here</h1>
+
         <form className="login__form" onSubmit={formik.handleSubmit}>
           <input
             type="email"
@@ -69,9 +70,10 @@ function LoginPage() {
             Login
           </button>
         </form>
+
         <p>
-          New User?{" "}
-          <span className="login__link__signup" onClick={handleClick}>
+          <span> New User? </span>
+          <span className="login__link__signup nowrap" onClick={handleClick}>
             Sign Up Now
           </span>
         </p>

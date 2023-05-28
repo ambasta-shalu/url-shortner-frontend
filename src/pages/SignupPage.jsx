@@ -62,6 +62,7 @@ function SignupPage() {
 
       <div className="signup__content">
         <h1 className="signup__heading">Sign Up Here</h1>
+
         <form className="signup__form" onSubmit={formik.handleSubmit}>
           <input
             type="email"
@@ -108,9 +109,10 @@ function SignupPage() {
             Sign Up
           </button>
         </form>
+
         <p>
-          Already Registered?{" "}
-          <span className="signup__link__login" onClick={handleClick}>
+          <span>Already Registered? </span>
+          <span className="signup__link__login nowrap" onClick={handleClick}>
             Login Now
           </span>
         </p>

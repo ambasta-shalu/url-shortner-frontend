@@ -29,3 +29,9 @@ body {
   color: var(--COLOR-DARK);
   overflow-x: hidden;
 }
+
+/* UTILITY-FUNCTION */
+
+.nowrap {
+  white-space: nowrap;
+}
