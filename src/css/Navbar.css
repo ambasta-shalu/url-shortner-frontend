@@ -48,3 +48,64 @@
   background-color: var(--COLOR-DARK);
   color: var(--COLOR-LIGHT);
 }
+
+/* Media Query Breakpoints */
+
+@media (max-width: 660px) {
+  .logout__button {
+    padding: 0.5rem 0.75rem;
+    margin: 1.5rem 0rem;
+    letter-spacing: 1.5px;
+    border-radius: 0.8rem;
+  }
+
+  .urls__button {
+    padding: 0.5rem 0.75rem;
+    margin: 1.5rem;
+    letter-spacing: 1.5px;
+    border-radius: 0.8rem;
+  }
+}
+
+@media (max-width: 522px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    gap: 15rem;
+  }
+
+  .logout__button {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .urls__button {
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__buttons {
+    gap: 10rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav__buttons {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 316px) {
+  .nav__buttons {
+    gap: 0rem;
+  }
+}

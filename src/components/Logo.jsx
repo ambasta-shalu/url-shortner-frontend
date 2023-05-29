@@ -4,7 +4,7 @@ import "../css/Logo.css";
 function Logo() {
   return (
     <div className="logo">
-      <h1 className="logo__title">URL Shortner</h1>
+      <h1 className="logo__title nowrap">URL Shortner</h1>
     </div>
   );
 }

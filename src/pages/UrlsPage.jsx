@@ -25,16 +25,17 @@ function UrlsPage() {
   return (
     <div className="urls__page">
       <div className="shape"></div>
-      <div className="shape"></div>
+      {/* <div className="shape"></div> */}
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <Navbar btnName="Home" btnFun={handleHome} />
 
       {allUrls?.allUrls.length ? (
         <div className="urls__page__content">
           <div className="urls__page__header">
-            <h2>Long Url</h2>
+            <h2 className="hide">Long Url</h2>
             <h2>Short Url</h2>
             <h2>Action</h2>
+            <h2>View</h2>
           </div>
 
           <div>

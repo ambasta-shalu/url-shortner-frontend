@@ -21,7 +21,7 @@ function Navbar(props) {
         <button className="logout__button" onClick={handleLogout}>
           Logout
         </button>
-        <button className="urls__button" onClick={btnFun}>
+        <button className="urls__button nowrap" onClick={btnFun}>
           {btnName}
         </button>
       </div>

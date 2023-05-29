@@ -2,6 +2,7 @@ import React from "react";
 import "../css/UrlsContainer.css";
 import { AiFillDelete } from "react-icons/ai";
 import { RxClipboardCopy } from "react-icons/rx";
+import { FaEye } from "react-icons/fa";
 import { Toaster, toast } from "react-hot-toast";
 import copy from "copy-to-clipboard";
 import { useUrlStore } from "../store/UrlStore";
@@ -33,8 +34,8 @@ function UrlsContainer(props) {
     <div key={url._id} className="urls__container">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
 
-      <div className="urls" onClick={handleLongUrlCopy}>
-        {truncate(url.longUrl, 25)}
+      <div className="urls hide" onClick={handleLongUrlCopy}>
+        {truncate(url.longUrl, 20)}
       </div>
 
       <div className="urls" onClick={handleShortUrlCopy}>
@@ -52,6 +53,11 @@ function UrlsContainer(props) {
           title="Copy"
           onClick={handleShortUrlCopy}
         />
+      </div>
+
+      <div className="urls__c__view">
+        <span className="view__count">000 </span>
+        <FaEye className="action__view" title="View Count" />
       </div>
     </div>
   );

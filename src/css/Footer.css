@@ -34,6 +34,8 @@
   cursor: pointer;
 }
 
+/* Media Query Breakpoints */
+
 @media (max-width: 620px) {
   .footer__content {
     padding: 0.8rem;
