@@ -41,7 +41,7 @@ function IndexPage() {
   return (
     <div className="index__page">
       <div className="shape"></div>
-      <div className="shape"></div>
+      {/* <div className="shape"></div> */}
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <Navbar btnName="My Urls" btnFun={handleMyUrls} />
 

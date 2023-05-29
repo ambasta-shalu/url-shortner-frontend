@@ -49,3 +49,71 @@
   border-radius: 5rem;
   letter-spacing: 1px;
 }
+
+/* Media Query Breakpoints */
+
+@media (max-width: 695px) {
+  .index__contents {
+    padding: 0.5rem;
+  }
+
+  .index__user {
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .index__contents > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .index__input__field {
+    width: 32rem;
+  }
+
+  .index__output__field {
+    font-size: 1rem;
+    padding: 0.25rem 0.75rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 535px) {
+  .index__user {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .index__contents > h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .index__input__field {
+    width: 22rem;
+    padding: 0.5rem;
+  }
+
+  .index__output__field {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .index__user {
+    font-size: 1rem;
+  }
+
+  .index__contents > h1 {
+    font-size: 1.25rem;
+  }
+
+  .index__input__field {
+    width: 16rem;
+    padding: 0.4rem;
+  }
+}
