@@ -12,7 +12,7 @@ function Footer() {
         <p>
           Coded with ReactJS{" "}
           <i className="f__text f__heart__symbol">&#10084;</i> by{" "}
-          <span className="f__text dev__name" onClick={handleClick}>
+          <span className="f__text dev__name nowrap" onClick={handleClick}>
             Shalu Ambasta
           </span>
         </p>

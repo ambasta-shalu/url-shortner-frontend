@@ -49,7 +49,7 @@ function IndexPage() {
         {userData ? (
           <h2 className="index__user">
             Welcome back{" "}
-            <span className="user__name">
+            <span className="user__name nowrap">
               {userData?.firstName} {userData?.lastName}{" "}
             </span>
             👋

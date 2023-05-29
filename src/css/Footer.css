@@ -33,3 +33,25 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@media (max-width: 620px) {
+  .footer__content {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 466px) {
+  .footer__content {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .footer__content {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+}
