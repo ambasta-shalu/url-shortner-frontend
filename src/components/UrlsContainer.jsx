@@ -39,7 +39,7 @@ function UrlsContainer(props) {
       </div>
 
       <div className="urls" onClick={handleShortUrlCopy}>
-        {window.location.hostname}/{url.shortUrl}
+        {url.shortUrl}
       </div>
 
       <div className="urls__c__actions">
