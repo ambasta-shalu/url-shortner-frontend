@@ -11,4 +11,5 @@
 
 .logo__title {
   color: var(--THEME-COLOR-LIGHT);
+  cursor: pointer;
 }
