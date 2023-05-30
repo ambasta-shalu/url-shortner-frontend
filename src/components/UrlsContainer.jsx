@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/UrlsContainer.css";
 import { AiFillDelete } from "react-icons/ai";
-import { RxClipboardCopy } from "react-icons/rx";
+import { IoIosCopy } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
 import { Toaster, toast } from "react-hot-toast";
 import copy from "copy-to-clipboard";
@@ -48,7 +48,7 @@ function UrlsContainer(props) {
           title="Delete"
           onClick={handleDelete}
         />
-        <RxClipboardCopy
+        <IoIosCopy
           className="action__copy"
           title="Copy"
           onClick={handleShortUrlCopy}
