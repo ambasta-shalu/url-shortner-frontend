@@ -23,7 +23,7 @@ function LoginPage() {
     validate: validateLogin,
     onSubmit: async (values) => {
       try {
-        login(values.email, values.password);
+        await login(values.email, values.password);
         // console.log(JSON.stringify(values, null, 2));
         navigate("/");
       } catch (error) {
@@ -32,13 +32,13 @@ function LoginPage() {
     },
   });
 
-  useEffect(() => {
-    if (formik.errors?.email) {
-      toast.error(formik.errors.email);
-    } else if (formik.errors?.password) {
-      toast.error(formik.errors.password);
-    }
-  }, [formik.errors]);
+  // useEffect(() => {
+  //   if (formik.errors?.email) {
+  //     toast.error(formik.errors.email);
+  //   } else if (formik.errors?.password) {
+  //     toast.error(formik.errors.password);
+  //   }
+  // }, [formik.errors]);
 
   return (
     <div className="login__page">

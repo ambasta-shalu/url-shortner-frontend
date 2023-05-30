@@ -40,19 +40,19 @@ function SignupPage() {
     },
   });
 
-  useEffect(() => {
-    if (formik.errors?.email) {
-      toast.error(formik.errors.email);
-    } else if (formik.errors?.firstName) {
-      toast.error(formik.errors.firstName);
-    } else if (formik.errors?.lastName) {
-      toast.error(formik.errors.lastName);
-    } else if (formik.errors?.password) {
-      toast.error(formik.errors.password);
-    } else if (formik.errors?.cPassword) {
-      toast.error(formik.errors.cPassword);
-    }
-  }, [formik.errors]);
+  // useEffect(() => {
+  //   if (formik.errors?.email) {
+  //     toast.error(formik.errors.email);
+  //   } else if (formik.errors?.firstName) {
+  //     toast.error(formik.errors.firstName);
+  //   } else if (formik.errors?.lastName) {
+  //     toast.error(formik.errors.lastName);
+  //   } else if (formik.errors?.password) {
+  //     toast.error(formik.errors.password);
+  //   } else if (formik.errors?.cPassword) {
+  //     toast.error(formik.errors.cPassword);
+  //   }
+  // }, [formik.errors]);
 
   return (
     <div className="signup__page">
@@ -72,7 +72,7 @@ function SignupPage() {
             onChange={formik.handleChange}
             value={formik.values.email}
           />
-          {/* {formik.errors.email && <p>{formik.errors.email}</p>} */}
+          {/* {formik.errors.email && <p className="input__error">{formik.errors.email}</p>} */}
           <input
             type="text"
             placeholder="First Name"
