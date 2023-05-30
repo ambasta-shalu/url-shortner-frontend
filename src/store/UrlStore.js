@@ -8,7 +8,6 @@ export const useUrlStore = create((set) => ({
   shortUrl: null,
   allUrls: null,
   deletedUrlCount: 0,
-  clickUrlCount: 0,
 
   // fetch short url
   fetchShortUrl: async (longUrl) => {
@@ -43,8 +42,6 @@ export const useUrlStore = create((set) => ({
       const response = await axios.get(
         REACT_APP_SERVER_DOMAIN + "/url/" + shortId
       );
-
-      set({ clickUrlCount: response.data.clickCount });
 
       const longUrl = response.data.longUrl;
       window.location.replace(longUrl);

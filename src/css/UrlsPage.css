@@ -1,3 +1,10 @@
+.urls__page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
 .urls__page__content {
   display: flex;
   flex-direction: column;

@@ -11,7 +11,6 @@ function UrlsContainer(props) {
   const { url } = props;
 
   const delUrl = useUrlStore((state) => state.delUrl);
-  const clickUrlCount = useUrlStore((state) => state.clickUrlCount);
 
   const truncate = function (string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
@@ -57,7 +56,7 @@ function UrlsContainer(props) {
       </div>
 
       <div className="urls__c__view">
-        <span className="view__count">{clickUrlCount} </span>
+        <span className="view__count">{url.clickCount || 0} </span>
         <FaEye className="action__view" title="View Count" />
       </div>
     </div>

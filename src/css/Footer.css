@@ -4,9 +4,10 @@
   right: 0;
   width: 100%;
   text-align: center;
-  position: fixed;
   background-color: var(--BODY-BG-COLOR);
   color: var(--COLOR-LIGHT);
+  margin-top: 4rem;
+  z-index: 10;
 }
 
 .footer__content {
