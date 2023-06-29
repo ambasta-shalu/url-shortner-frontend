@@ -9,37 +9,27 @@ export async function validateSignup(values) {
     errors.email = "Invalid Email Address...!";
   } else if (values.email.includes(" ")) {
     errors.email = "Invalid Email Format...!";
-  }
-
-  if (!values.firstName) {
+  } else if (!values.firstName) {
     errors.firstName = "First Name Required...!";
   } else if (values.firstName.includes(" ")) {
     errors.firstName = "Invalid First Name...!";
-  }
-
-  if (!values.lastName) {
+  } else if (!values.lastName) {
     errors.lastName = "Last Name Required...!";
   } else if (values.lastName.includes(" ")) {
     errors.lastName = "Invalid Last Name...!";
-  }
-
-  if (!values.password) {
+  } else if (!values.password) {
     errors.password = "Password Required...!";
   } else if (values.password.length < 8) {
     errors.password = "Password must be 8 characters or more...!";
   } else if (values.password.includes(" ")) {
     errors.password = "Invalid Password...!";
-  }
-
-  if (!values.cPassword) {
+  } else if (!values.cPassword) {
     errors.cPassword = "Confirm Password Required...!";
   } else if (values.cPassword.length < 8) {
     errors.cPassword = "Password must be 8 characters or more...!";
   } else if (values.cPassword.includes(" ")) {
     errors.cPassword = "Invalid Password...!";
-  }
-
-  if (values.password !== values.cPassword) {
+  } else if (values.password !== values.cPassword) {
     errors.cPassword = "Password doesn't match";
   }
 
@@ -59,9 +49,7 @@ export async function validateLogin(values) {
     errors.email = "Invalid Email Address...!";
   } else if (values.email.includes(" ")) {
     errors.email = "Invalid Email Format...!";
-  }
-
-  if (!values.password) {
+  } else if (!values.password) {
     errors.password = "Password Required...!";
   } else if (values.password.length < 8) {
     errors.password = "Password must be 8 characters or more...!";

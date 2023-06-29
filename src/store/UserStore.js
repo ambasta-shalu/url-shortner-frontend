@@ -23,7 +23,7 @@ export const useUserStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from userstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 }));

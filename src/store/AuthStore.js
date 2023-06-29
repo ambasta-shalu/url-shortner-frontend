@@ -22,8 +22,8 @@ export const useAuthStore = create((set) => ({
       // set the cookie
       cookies.set("TOKEN", response.data.token, {
         path: "/",
-        // expires in 2 hour
-        expires: new Date(new Date().getTime() + 2 * 60 * 60 * 1000),
+        // expires in 6 hour
+        expires: new Date(new Date().getTime() + 6 * 60 * 60 * 1000),
       });
 
       // redirect user to the auth (index page) page
@@ -35,7 +35,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from signup authstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 
@@ -52,8 +52,8 @@ export const useAuthStore = create((set) => ({
       // set the cookie
       cookies.set("TOKEN", response.data.token, {
         path: "/",
-        // expires in 2 hour
-        expires: new Date(new Date().getTime() + 2 * 60 * 60 * 1000),
+        // expires in 6 hour
+        expires: new Date(new Date().getTime() + 6 * 60 * 60 * 1000),
       });
 
       // redirect user to the auth (index page) page
@@ -65,7 +65,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from login authstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 
@@ -86,7 +86,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from logout authstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 }));

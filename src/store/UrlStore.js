@@ -32,7 +32,7 @@ export const useUrlStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from fetchShortUrl urlstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 
@@ -43,12 +43,16 @@ export const useUrlStore = create((set) => ({
         REACT_APP_SERVER_DOMAIN + "/url/" + shortId
       );
 
-      const longUrl = response.data.longUrl;
-      window.location.replace(longUrl);
+      const longUrl = response.data.url.longUrl;
+      if (longUrl) {
+        window.location.replace(longUrl);
+      } else {
+        toast.error("Long Url Not Found in Response 😑");
+      }
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from fetchLongUrl urlstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 
@@ -68,7 +72,7 @@ export const useUrlStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from fetchAllUrls urlstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 
@@ -93,7 +97,7 @@ export const useUrlStore = create((set) => ({
     } catch (error) {
       // handle error
       toast.error(error.message);
-      console.error(`error from delUrl urlstore ${error.message}`);
+      console.error(`${error.message}`);
     }
   },
 }));
