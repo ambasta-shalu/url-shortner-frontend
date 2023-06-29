@@ -47,7 +47,7 @@ export const useUrlStore = create((set) => ({
       if (longUrl) {
         window.location.replace(longUrl);
       } else {
-        toast.error("Long Url Not Found in Response 😑");
+        toast.error("Long URL Not Found in Response 😑");
       }
     } catch (error) {
       // handle error
