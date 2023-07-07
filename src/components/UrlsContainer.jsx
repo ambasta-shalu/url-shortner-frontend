@@ -31,7 +31,7 @@ function UrlsContainer(props) {
   };
 
   return (
-    <div key={url._id} className="urls__container">
+    <div className="urls__container">
       <Toaster position="top-center" reverseOrder={false}></Toaster>
 
       <div className="urls hide" onClick={handleLongUrlCopy}>

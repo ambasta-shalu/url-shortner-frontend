@@ -40,7 +40,7 @@ function UrlsPage() {
 
           <div>
             {allUrls?.allUrls.map((it) => (
-              <UrlsContainer url={it} />
+              <UrlsContainer key={it._id} url={it} />
             ))}
           </div>
         </div>
