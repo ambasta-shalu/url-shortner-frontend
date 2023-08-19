@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/LoginPage.css";
+import { validateLogin } from "../helper/ValidateForm";
+import { useAuthStore } from "../store/AuthStore";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { Toaster, toast } from "react-hot-toast";
-import { validateLogin } from "../helper/ValidateForm";
-import { useAuthStore } from "../store/AuthStore";
+import ClockLoader from "react-spinners/ClockLoader";
 
 function LoginPage() {
   const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = function () {
     navigate("/signup");
@@ -22,6 +25,8 @@ function LoginPage() {
     },
     validate: validateLogin,
     onSubmit: async (values) => {
+      setIsLoading(true);
+
       try {
         await login(values.email, values.password);
         // console.log(JSON.stringify(values, null, 2));
@@ -29,6 +34,8 @@ function LoginPage() {
       } catch (error) {
         toast.error(error.message);
       }
+
+      setIsLoading(false);
     },
   });
 
@@ -55,6 +62,8 @@ function LoginPage() {
             placeholder="abc@mail.com"
             id="email"
             name="email"
+            required
+            autoFocus
             onChange={formik.handleChange}
             value={formik.values.email}
           />
@@ -63,10 +72,17 @@ function LoginPage() {
             placeholder="********"
             id="password"
             name="password"
+            required
             onChange={formik.handleChange}
             value={formik.values.password}
           />
           <button className="login__btn" type="submit">
+            <ClockLoader
+              color="#647878"
+              loading={isLoading}
+              size={25}
+              speedMultiplier={1}
+            />
             Login
           </button>
         </form>

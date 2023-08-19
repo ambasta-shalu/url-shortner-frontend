@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/SignupPage.css";
+import { validateSignup } from "../helper/ValidateForm";
+import { useAuthStore } from "../store/AuthStore";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { Toaster, toast } from "react-hot-toast";
-import { validateSignup } from "../helper/ValidateForm";
-import { useAuthStore } from "../store/AuthStore";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function SignupPage() {
   const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = function () {
     navigate("/login");
@@ -25,6 +28,8 @@ function SignupPage() {
     },
     validate: validateSignup,
     onSubmit: async (values) => {
+      setIsLoading(true);
+
       try {
         await signup(
           values.email,
@@ -37,6 +42,8 @@ function SignupPage() {
       } catch (error) {
         toast.error(error.message);
       }
+
+      setIsLoading(false);
     },
   });
 
@@ -69,6 +76,8 @@ function SignupPage() {
             placeholder="Email"
             id="email"
             name="email"
+            required
+            autoFocus
             onChange={formik.handleChange}
             value={formik.values.email}
           />
@@ -78,6 +87,7 @@ function SignupPage() {
             placeholder="First Name"
             id="firstName"
             name="firstName"
+            required
             onChange={formik.handleChange}
             value={formik.values.firstName}
           />
@@ -86,6 +96,7 @@ function SignupPage() {
             placeholder="Last Name"
             id="lastName"
             name="lastName"
+            required
             onChange={formik.handleChange}
             value={formik.values.lastName}
           />
@@ -94,6 +105,7 @@ function SignupPage() {
             placeholder="Password"
             id="password"
             name="password"
+            required
             onChange={formik.handleChange}
             value={formik.values.password}
           />
@@ -102,10 +114,17 @@ function SignupPage() {
             placeholder="Confirm Password"
             id="cPassword"
             name="cPassword"
+            required
             onChange={formik.handleChange}
             value={formik.values.cPassword}
           />
           <button className="signup__btn" type="submit">
+            <ClipLoader
+              color="#647878"
+              loading={isLoading}
+              size={25}
+              speedMultiplier={1}
+            />
             Sign Up
           </button>
         </form>

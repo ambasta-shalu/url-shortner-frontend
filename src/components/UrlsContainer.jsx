@@ -1,10 +1,10 @@
 import React from "react";
 import "../css/UrlsContainer.css";
+import { Toaster, toast } from "react-hot-toast";
+import copy from "copy-to-clipboard";
 import { AiFillDelete } from "react-icons/ai";
 import { IoIosCopy } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
-import { Toaster, toast } from "react-hot-toast";
-import copy from "copy-to-clipboard";
 import { useUrlStore } from "../store/UrlStore";
 
 function UrlsContainer(props) {

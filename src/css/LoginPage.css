@@ -1,8 +1,8 @@
 .login__page {
   position: absolute;
-  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -61,6 +61,11 @@
   cursor: pointer;
   border-radius: 0.2rem;
   letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .login__btn:focus,

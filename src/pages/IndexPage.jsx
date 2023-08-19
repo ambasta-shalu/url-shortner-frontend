@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../css/IndexPage.css";
 import Navbar from "../components/Navbar";
-import { Toaster, toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 import { useUserStore } from "../store/UserStore";
 import { useUrlStore } from "../store/UrlStore";
+import { Toaster, toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import copy from "copy-to-clipboard";
-import Footer from "../components/Footer";
 
 function IndexPage() {
   const navigate = useNavigate();
