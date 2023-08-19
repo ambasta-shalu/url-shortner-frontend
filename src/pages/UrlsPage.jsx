@@ -1,21 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/UrlsPage.css";
-import { useUrlStore } from "../store/UrlStore";
-import { Toaster, toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import UrlsContainer from "../components/UrlsContainer";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useUrlStore } from "../store/UrlStore";
+import { Toaster, toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function UrlsPage() {
   const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchAllUrls = useUrlStore((state) => state.fetchAllUrls);
   const allUrls = useUrlStore((state) => state.allUrls);
   const deletedUrlCount = useUrlStore((state) => state.deletedUrlCount);
 
+  const fetchAllUrlsHelper = async function () {
+    setIsLoading(true);
+    await fetchAllUrls();
+    setIsLoading(false);
+  };
+
   useEffect(() => {
-    fetchAllUrls();
+    fetchAllUrlsHelper();
   }, [deletedUrlCount]);
 
   const handleHome = function () {
@@ -29,7 +38,18 @@ function UrlsPage() {
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <Navbar btnName="Home" btnFun={handleHome} />
 
-      {allUrls?.allUrls.length ? (
+      {isLoading ? (
+        <div className="pacman__loader">
+          <PacmanLoader
+            color="#6495ed"
+            loading={isLoading}
+            margin={2}
+            size={20}
+            speedMultiplier={1}
+          />
+          <p>Fetching URLs . . .</p>
+        </div>
+      ) : allUrls?.allUrls.length ? (
         <div className="urls__page__content">
           <div className="urls__page__header">
             <h2 className="hide">Long Url</h2>
@@ -47,6 +67,7 @@ function UrlsPage() {
       ) : (
         <h1 className="urls__page__msg">You have No URLs 😷</h1>
       )}
+
       <Footer />
     </div>
   );
