@@ -11,9 +11,19 @@
   left: 0;
 }
 
+.nav__buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
 .logout__button {
   padding: 0.75rem 1rem;
-  margin: 2rem 1rem;
+  margin-top: 1rem;
   background-color: var(--COLOR-LIGHT);
   color: var(--BODY-BG-COLOR);
   border: none;
@@ -22,6 +32,11 @@
   border-radius: 1rem;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
   letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .logout__button:focus,
@@ -32,7 +47,7 @@
 
 .urls__button {
   padding: 0.75rem 1rem;
-  margin: 2rem;
+  margin-top: 1rem;
   background-color: var(--THEME-COLOR-LIGHT);
   color: var(--BODY-BG-COLOR);
   border: none;
@@ -41,6 +56,11 @@
   border-radius: 1rem;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
   letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .urls__button:focus,
@@ -52,6 +72,11 @@
 /* Media Query Breakpoints */
 
 @media (max-width: 660px) {
+  .nav__buttons {
+    gap: 0rem;
+    margin-right: 0rem;
+  }
+
   .logout__button {
     padding: 0.5rem 0.75rem;
     margin: 1.5rem 0rem;
@@ -67,20 +92,22 @@
   }
 }
 
-@media (max-width: 522px) {
+@media (max-width: 600px) {
   .navbar {
     flex-direction: column;
     justify-content: center;
   }
+}
 
+@media (max-width: 522px) {
   .nav__buttons {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    flex-wrap: nowrap;
     align-content: center;
-    justify-content: center;
-    gap: 15rem;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 12rem;
   }
 
   .logout__button {
@@ -92,19 +119,13 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 490px) {
   .nav__buttons {
-    gap: 10rem;
+    gap: 6rem;
   }
 }
 
 @media (max-width: 390px) {
-  .nav__buttons {
-    gap: 5rem;
-  }
-}
-
-@media (max-width: 316px) {
   .nav__buttons {
     gap: 0rem;
   }

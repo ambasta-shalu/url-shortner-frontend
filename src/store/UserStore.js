@@ -7,7 +7,7 @@ import { REACT_APP_SERVER_DOMAIN } from "../../config";
 export const useUserStore = create((set) => ({
   userData: null,
 
-  // fetch user data
+  // FETCH USER DATA
   fetchUserData: async () => {
     const cookie = new Cookies();
     const token = cookie.get("TOKEN");
@@ -21,7 +21,7 @@ export const useUserStore = create((set) => ({
 
       set({ userData: response.data });
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }

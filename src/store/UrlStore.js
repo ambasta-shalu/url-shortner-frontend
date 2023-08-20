@@ -9,7 +9,7 @@ export const useUrlStore = create((set) => ({
   allUrls: null,
   deletedUrlCount: 0,
 
-  // fetch short url
+  // FETCH SHORT URL
   fetchShortUrl: async (longUrl) => {
     const cookie = new Cookies();
     const token = cookie.get("TOKEN");
@@ -30,13 +30,13 @@ export const useUrlStore = create((set) => ({
       toast.success("Url Shorten Successfully! 🤓");
       set({ shortUrl: response.data });
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }
   },
 
-  // fetch long url and handle redirect
+  // FETCH LONG URL AND HANDLE REDIRECT
   fetchLongUrl: async (shortId) => {
     try {
       const response = await axios.get(
@@ -50,13 +50,13 @@ export const useUrlStore = create((set) => ({
         toast.error("Long URL Not Found in Response 😑");
       }
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }
   },
 
-  // fetch all urls of provided user
+  // FETCH ALL URLS OF PROVIDED USER
   fetchAllUrls: async () => {
     const cookie = new Cookies();
     const token = cookie.get("TOKEN");
@@ -70,13 +70,13 @@ export const useUrlStore = create((set) => ({
 
       set({ allUrls: response.data });
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }
   },
 
-  // delete url
+  // DELETE URL
   delUrl: async (urlId) => {
     const cookie = new Cookies();
     const token = cookie.get("TOKEN");
@@ -95,7 +95,7 @@ export const useUrlStore = create((set) => ({
 
       toast.success("Url Deleted! 👽");
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }

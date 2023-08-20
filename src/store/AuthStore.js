@@ -7,7 +7,7 @@ import { REACT_APP_SERVER_DOMAIN } from "../../config";
 export const useAuthStore = create((set) => ({
   isLoggedIn: false,
 
-  // handle signup
+  // HANDLE SIGNUP
   signup: async (email, firstName, lastName, password) => {
     const cookies = new Cookies();
 
@@ -19,27 +19,27 @@ export const useAuthStore = create((set) => ({
         password,
       });
 
-      // set the cookie
+      // SET THE COOKIE
       cookies.set("TOKEN", response.data.token, {
         path: "/",
-        // expires in 6 hour
+        // EXPIRES IN 6 HOUR
         expires: new Date(new Date().getTime() + 6 * 60 * 60 * 1000),
       });
 
-      // redirect user to the auth (index page) page
+      // REDIRECT USER TO THE AUTH (INDEX PAGE) PAGE
       window.location.href = "/";
 
       set({ isLoggedIn: true });
 
       toast.success("SignUp Successful...!");
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }
   },
 
-  // handle login
+  // HANDLE LOGIN
   login: async (email, password) => {
     const cookies = new Cookies();
 
@@ -49,42 +49,42 @@ export const useAuthStore = create((set) => ({
         password,
       });
 
-      // set the cookie
+      // SET THE COOKIE
       cookies.set("TOKEN", response.data.token, {
         path: "/",
-        // expires in 6 hour
+        // EXPIRES IN 6 HOUR
         expires: new Date(new Date().getTime() + 6 * 60 * 60 * 1000),
       });
 
-      // redirect user to the auth (index page) page
+      // REDIRECT USER TO THE AUTH (INDEX PAGE) PAGE
       window.location.href = "/";
 
       set({ isLoggedIn: true });
 
       toast.success("Login Successful...!");
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }
   },
 
-  // handle logout
+  // HANDLE LOGOUT
   logout: () => {
     const cookies = new Cookies();
 
     try {
-      // destroy the cookie
+      // DESTROY THE COOKIE
       cookies.remove("TOKEN", { path: "/" });
 
-      // redirect user to the Login Page
+      // REDIRECT USER TO THE LOGIN PAGE
       window.location.href = "/login";
 
       set({ isLoggedIn: false });
 
       toast.success("Logout Successful...!");
     } catch (error) {
-      // handle error
+      // HANDLE ERROR
       toast.error(error.message);
       console.error(`${error.message}`);
     }

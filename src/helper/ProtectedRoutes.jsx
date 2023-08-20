@@ -4,7 +4,7 @@ import LoginPage from "../pages/LoginPage";
 
 const cookies = new Cookies();
 
-// receives component
+// ALTER COMPONENET ON THE BASIS OF TOKEN
 export default function ProtectedRoutes({ child }) {
   const token = cookies.get("TOKEN");
   return token ? child : <LoginPage />;

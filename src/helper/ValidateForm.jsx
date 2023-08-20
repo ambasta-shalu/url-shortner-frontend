@@ -1,4 +1,4 @@
-// Validate Signup Page
+// VALIDATE SIGNUP PAGE
 
 export async function validateSignup(values) {
   const errors = {};
@@ -38,7 +38,7 @@ export async function validateSignup(values) {
 
 // ****************************************************************************************************************
 
-// Validate Login Page
+// VALIDATE LOGIN PAGE
 
 export async function validateLogin(values) {
   const errors = {};

@@ -37,7 +37,6 @@ function SignupPage() {
           values.lastName,
           values.password
         );
-        // console.log(JSON.stringify(values, null, 2));
         navigate("/");
       } catch (error) {
         toast.error(error.message);
@@ -81,7 +80,6 @@ function SignupPage() {
             onChange={formik.handleChange}
             value={formik.values.email}
           />
-          {/* {formik.errors.email && <p className="input__error">{formik.errors.email}</p>} */}
           <input
             type="text"
             placeholder="First Name"

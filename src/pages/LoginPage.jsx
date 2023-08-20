@@ -29,7 +29,6 @@ function LoginPage() {
 
       try {
         await login(values.email, values.password);
-        // console.log(JSON.stringify(values, null, 2));
         navigate("/");
       } catch (error) {
         toast.error(error.message);
