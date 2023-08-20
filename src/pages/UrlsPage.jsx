@@ -7,7 +7,7 @@ import { useUrlStore } from "../store/UrlStore";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import PacmanLoader from "react-spinners/PacmanLoader";
-import { RiHomeHeartFill } from "react-icons/Ri";
+import { RiHomeHeartFill } from "react-icons/ri";
 
 function UrlsPage() {
   const navigate = useNavigate();
