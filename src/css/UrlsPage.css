@@ -52,7 +52,7 @@
   padding: 5rem;
 }
 
-/* Media Query Breakpoints */
+/* MEDIA QUERY BREAKPOINTS */
 
 @media (max-width: 700px) {
   .urls__page__content {

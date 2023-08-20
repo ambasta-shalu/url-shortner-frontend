@@ -108,7 +108,7 @@
   color: var(--COLOR-LIGHT);
 }
 
-/* Media Query Breakpoints */
+/* MEDIA QUERY BREAKPOINTS */
 
 @media (max-width: 540px) {
   .signup__content {

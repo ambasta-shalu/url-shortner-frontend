@@ -69,7 +69,7 @@
   color: var(--COLOR-LIGHT);
 }
 
-/* Media Query Breakpoints */
+/* MEDIA QUERY BREAKPOINTS */
 
 @media (max-width: 660px) {
   .nav__buttons {
